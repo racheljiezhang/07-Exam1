@@ -2,8 +2,8 @@
 Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Rachel Zhang.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -88,8 +88,23 @@ def problem1a(rectangle, square, thickness, window):
       :type thickness: int
       :type window:    rg.RoseWindow
     """
+    center = square.center
+    top_left = rectangle.get_upper_left_corner()
+    top_right = rectangle.get_upper_right_corner()
+    save_me = rg.Line(top_left, top_right)
+    midpoint = save_me.get_midpoint()
+    line1 = rg.Line(center, midpoint)
+    line1.thickness = thickness
+    line1.color = rectangle.outline_color
+
+    rectangle.attach_to(window)
+    square.attach_to(window)
+
+    line1.attach_to(window)
+
+    window.render()
     # --------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.  SEE THE PICTURES in the PDF!
+    # DONE: 2. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
 
@@ -148,8 +163,18 @@ def problem1b(point, win, width, height, color):
       :type height: int
       :type color:  str
     """
+    point.attach_to(win)
+    corner_1_x = point.x - (width * 1/2)
+    corner_2_x = point.x + (width * 1/2)
+    ellipse_y = point.y + height
+    corner_1 = rg.Point(corner_1_x,point.y)
+    corner_2 = rg.Point(corner_2_x, ellipse_y)
+    ellipse = rg.Ellipse(corner_1, corner_2)
+    ellipse.fill_color = color
+    ellipse.attach_to(win)
+    win.render()
     # --------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
+    # DONE: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
 
