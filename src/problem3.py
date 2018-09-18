@@ -87,19 +87,40 @@ def problem3(point, length, delta, window):
       :type delta:   int
       :type window:  rg.RoseWindow
     """
+    line1_y = point.y + length
+    line1 = rg.Line(point, rg.Point(point.x, line1_y))
+    line1.thickness = 3
+    y = point.y
+    x = point.x + length
+    for k in range(length // delta + 1):
+        left_most_point = rg.Point(point.x, y)
+        right_most_point = rg.Point(x, y)
+        line = rg.Line(left_most_point, right_most_point)
+        line.thickness = 3
+        line.attach_to(window)
+        x = x + 20
+        y = y + delta
+        line.color = 'spring green'
+        if (k + 1) % 3:
+            line.color = 'cyan'
+        if k % 3 == 0:
+            line.color = 'magenta'
+
+    line1.attach_to(window)
+    window.render()
     # --------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
-    # TODO (continued):  IMPORTANT: Use this ITERATIVE ENHANCEMENT PLAN:
-    # TODO (continued):    1. Make the sole VERTICAL line appear,
-    # TODO (continued):         with thickness 3.
-    # TODO (continued):    2. Make the FIRST horizontal line appear.
-    # TODO (continued):    3. Make MORE horizontal lines appear,
-    # TODO (continued):         each delta below the previous one.
-    # TODO (continued):    4. Make each successive horizontal line
-    # TODO (continued):         20 pixels longer than the previous one.
-    # TODO (continued):    5. Make the right NUMBER of horizontal lines.
-    # TODO (continued):    6. Make the horizontal lines each have thickness 3
-    # TODO (continued):         and colors per the specified pattern.
+    # DONE: 2. Implement and test this function.
+    # DONE (continued):  IMPORTANT: Use this ITERATIVE ENHANCEMENT PLAN:
+    # DONE (continued):    1. Make the sole VERTICAL line appear,
+    # DONE (continued):         with thickness 3.
+    # DONE (continued):    2. Make the FIRST horizontal line appear.
+    # DONE (continued):    3. Make MORE horizontal lines appear,
+    # DONE (continued):         each delta below the previous one.
+    # DONE (continued):    4. Make each successive horizontal line
+    # DONE (continued):         20 pixels longer than the previous one.
+    # DONE (continued):    5. Make the right NUMBER of horizontal lines.
+    # DONE (continued):    6. Make the horizontal lines each have thickness 3
+    # DONE (continued):         and colors per the specified pattern.
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
 
