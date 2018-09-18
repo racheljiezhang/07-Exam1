@@ -337,13 +337,9 @@ def problem2b(a, b, x):
          and the sum   16 + 18 + 20 + 24   is 78.
      """
     total = 0
-    for k in range(a, b):
-        count = 0
-        for i in range(a, b):
-            if k % i == 0:
-                count = count + 1
-        if count >= x:
-            total = total + k
+    for k in range(a, b + 1):
+        if number_of_factors(k) >= x:
+                total = total + k
     return total
 
     ############################################################################
