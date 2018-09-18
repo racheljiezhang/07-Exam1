@@ -343,12 +343,12 @@ def problem2b(a, b, x):
     return total
 
     ############################################################################
-    # TODO: 4. Implement and test this function.  See the IMPORTANT NOTE below!
+    # DONE: 4. Implement and test this function.  See the IMPORTANT NOTE below!
     #          Tests have been written for you (above).
     ############################################################################
-    # TODO (continued): IMPORTANT NOTE:
-    # TODO (continued):   **  For full credit you must appropriately use
-    # TODO (continued):       (i.e., call) the   number_of_factors   function
+    # DONE (continued): IMPORTANT NOTE:
+    # DONE (continued):   **  For full credit you must appropriately use
+    # DONE (continued):       (i.e., call) the   number_of_factors   function
     #                         that is DEFINED ABOVE.
     ############################################################################
 
